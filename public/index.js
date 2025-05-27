@@ -25,6 +25,8 @@ app.post("/mail/sendMain", async (req, res) => {
   }
 
   try {
+
+ 
     const retorno = await objMail.sendMailLerSimple(hst, port, secure, user, pass, mailTo, titulo, msgHTML, msgText);
     return res.status(200).json({ mesage: retorno.log });
   } catch (err) {
