@@ -17,23 +17,20 @@ app.get("/mail/enviar", async (req, res) => {
 });
 
 
-app.post( "/mail/sendMain" , async (req , res ) =>{
-	const {  hst , port , secure , user , pass , mailTo  , titulo , msgHTML , msgText } = req.body ; 
+app.post("/mail/sendMain", async (req, res) => {
+  const { hst, port, secure, user, pass, mailTo, titulo, msgHTML, msgText } = req.body;
 
-	if( !hst || !port || !secure || !user || !pass || !mailTo  || !titulo || !msgHTML || !msgText ){
-		return res.status(500).json({ mesage : 'Parametros invalidos / imcompletos'});
-	}
+  if (!hst || !port || !secure || !user || !pass || !mailTo || !titulo || !msgHTML || !msgText) {
+    return res.status(500).json({ mesage: "Parametros invalidos / imcompletos" });
+  }
 
-	try{
-		
-		let retorno  = objMail.sendMailLerSimple(hst , port , secure , user , pass , mailTo  , titulo , msgHTML , msgText);
-  	        return res.status(200).json({ mesage : `${retorno.log}` });
-
-	}catch(err){
-		return res.status(500).json({ mesage : `Erro na execução do processo ${err.message}`});
-		
-	}
-})
+  try {
+    const retorno = await objMail.sendMailLerSimple(hst, port, secure, user, pass, mailTo, titulo, msgHTML, msgText);
+    return res.status(200).json({ mesage: retorno.log });
+  } catch (err) {
+    return res.status(500).json({ mesage: `Erro na execução do processo ${err.message}` });
+  }
+});
 
 
 app.listen(3000, () => {
