@@ -44,7 +44,7 @@ class Mail {
        // let retorno =   `Email sent successfully at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Message ID: ${response.messageId}` ;
              let retorno =   `Email sent successfully at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Message ID: ${response.messageId}` ;
 
-       return { log : retorno } ;
+       return { 'log' : retorno } ;
 
     } catch (er) {
 
@@ -52,7 +52,7 @@ class Mail {
 
       // let retorno = `log`: `Email sending failed at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}`  ;
        let retorno =   `Email sending failed at ${def.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}` ;
-       return { log : retorno } ;
+       return { 'log' : retorno } ;
 
     }
   }
