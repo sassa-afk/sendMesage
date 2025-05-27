@@ -45,10 +45,10 @@ class Mail {
 
     } catch (er) {
 
-console.error(`Email sending failed at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}`);
+         console.error(`Email sending failed at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}`);
 
 
-       return  `Email sending failed at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}` ;
+       return  `log`: `Email sending failed at ${ def.dateFormat() } | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}`  ;
 
     }
   }
