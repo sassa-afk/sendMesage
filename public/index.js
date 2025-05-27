@@ -27,7 +27,7 @@ app.post( "/mail/sendMain" , async (req , res ) =>{
 	try{
 		
 		let retorno  = objMail.sendMailLerSimple(hst , port , secure , user , pass , mailTo  , titulo , msgHTML , msgText);
-  	        return res.status(200).json({ mesage : retorno.log });
+  	        return res.status(200).json({ mesage : `${retorno.log}` });
 
 	}catch(err){
 		return res.status(500).json({ mesage : `Erro na execução do processo ${err.message}`});
