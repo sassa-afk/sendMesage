@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 const Default = require("./Default");
-const default = new Default();
+const def = new Default();
 
 
 class Mail {
@@ -38,15 +38,15 @@ class Mail {
 
       });
 
-      console.log(`Email sent successfully at ${default.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Message ID: ${response.messageId}`);
-       return `Email sent successfully at ${default.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Message ID: ${response.messageId}` ;
+      console.log(`Email sent successfully at ${def.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Message ID: ${response.messageId}`);
+       return `Email sent successfully at ${def.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Message ID: ${response.messageId}` ;
 
     } catch (er) {
 
-console.error(`Email sending failed at ${default.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}`);
+console.error(`Email sending failed at ${def.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}`);
 
 
-       return  `Email sending failed at ${default.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}` ;
+       return  `Email sending failed at ${def.dateFormat} | From: ${user} | To: ${mailTo} | Subject: "${titulo}" | Error: ${err.message}` ;
 
     }
   }
